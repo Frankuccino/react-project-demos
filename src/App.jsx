@@ -6,12 +6,14 @@
 // import HiddenSearchBar from "./components/HiddenSearchBar";
 // import Testimonials from "./components/Testimonials";
 
-import { useId } from "react";
-import Accordion from "./components/Accordion";
-import { accordionData } from "./ultils/content";
+// import { useId } from "react";
+// import Accordion from "./components/Accordion";
+// import { accordionData } from "./ultils/content";
+
+import Form from "./components/Form";
 
 const App = () => {
-  const id = useId();
+  // const id = useId();
 
   return (
     <div>
@@ -22,11 +24,13 @@ const App = () => {
       {/* <ToggleBackgroundColor /> */}
       {/* <HiddenSearchBar /> */}
       {/* <Testimonials /> */}
-      <div className="accordion">
+      {/* <div className="accordion">
         {accordionData.map(({ title, content }) => (
           <Accordion title={title} content={content} key={id + title} />
         ))}
-      </div>
+      </div> */}
+
+      <Form />
     </div>
   );
 };
