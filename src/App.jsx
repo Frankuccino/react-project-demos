@@ -11,8 +11,7 @@ import ToggleBackgroundColor from "./components/ToggleBackgroundColor";
 import HiddenSearchBar from "./components/HiddenSearchBar";
 import Testimonials from "./components/Testimonials";
 import { AccordionPage } from "./components/Accordion";
-// import Form from "./components/Form";
-// import BackButton from "./components/BackButton"; // Highly recommended!
+import Form from "./components/Form";
 
 // Data
 import { accordionData } from "./ultils/content";
@@ -37,7 +36,7 @@ const App = () => {
           path="/accordion"
           element={<AccordionPage data={accordionData} />}
         />
-        {/* <Route path="/form" element={<Form />} /> */}
+        <Route path="/form" element={<Form />} />
       </Routes>
     </Router>
   );
@@ -54,7 +53,7 @@ function Home() {
     { title: "Hidden Search", path: "/search-bar" },
     { title: "Testimonials", path: "/testimonials" },
     { title: "Accordion", path: "/accordion" },
-    // { title: "Validation Form", path: "/form" },
+    { title: "Validation Form", path: "/form" },
   ];
 
   return (

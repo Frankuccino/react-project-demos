@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../styles/form.css";
-// We are not going to use a Form Validation Library
+import { Link } from "react-router-dom";
+import styles from "../styles/form.module.css";
+
 const Form = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ const Form = () => {
       setErrorUsername("");
       setUserColor("green");
     } else {
-      setErrorUsername("username must be 8 letters long.");
+      setErrorUsername("Username must be 8 letters long.");
       setUserColor("red");
     }
 
@@ -32,7 +33,7 @@ const Form = () => {
       setErrorEmail("");
       setEmailColor("green");
     } else {
-      setErrorEmail("email address invalid.");
+      setErrorEmail("Email address invalid.");
       setEmailColor("red");
     }
 
@@ -54,48 +55,57 @@ const Form = () => {
   };
 
   return (
-    <>
-      <div className="card">
-        <div className="card-image"></div>
-        <form>
+    <div className={styles.formPage}>
+      <Link to="/" className={styles.backBtn}>
+        ← Home
+      </Link>
+
+      <div className={styles.card}>
+        <div className={styles.cardImage}></div>
+
+        <form onSubmit={validate}>
           <input
             type="text"
             placeholder="Name"
-            style={{ borderColor: userColor }}
+            style={{ borderBottomColor: userColor }}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <p className="error">{errorUsername}</p>
+          <p className={styles.error}>{errorUsername}</p>
+
           <input
             type="email"
             placeholder="Email"
-            style={{ borderColor: emailColor }}
+            style={{ borderBottomColor: emailColor }}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <p className="error">{errorEmail}</p>
+          <p className={styles.error}>{errorEmail}</p>
+
           <input
             type="password"
             placeholder="Password"
-            style={{ borderColor: passwordColor }}
+            style={{ borderBottomColor: passwordColor }}
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <p className="error">{errorPassword}</p>
+          <p className={styles.error}>{errorPassword}</p>
 
           <input
             type="password"
             placeholder="Confirm Password"
-            style={{ borderColor: confirmPasswordColor }}
+            style={{ borderBottomColor: confirmPasswordColor }}
+            value={confirmPassword}
             onChange={(e) => setConfirmPassowrd(e.target.value)}
           />
-          <p className="error">{errorConfirmPassword}</p>
+          <p className={styles.error}>{errorConfirmPassword}</p>
 
-          <button className="submit-btn" onClick={validate}>
+          <button type="submit" className={styles.submitBtn}>
             Submit
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
