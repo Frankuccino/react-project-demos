@@ -1,0 +1,16 @@
+/* src/index.css */
+
+/* This targets every single element and removes default browser spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* This targets the actual page itself */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap");
+
+/* This replaces 'body section' */
+.toggleWrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease; /* Smooth color transition */
+}
+
+/* Scope the button so it doesn't move all buttons to the top-right */
+.toggleWrapper button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid currentColor; /* Keeps it visible against bg changes */
+}
+
+/* Scope the h1 and section content */
+.toggleWrapper .content h1 {
+  font-size: 5rem;
+  font-family: "Bungee Outline", cursive;
+  line-height: 80px;
+  text-align: center;
+}
+
+/* Adding the Back Button style you likely need */
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: inherit;
+  text-decoration: none;
+}

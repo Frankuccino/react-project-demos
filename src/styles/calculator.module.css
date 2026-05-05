@@ -1,11 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
-
-body {
+/* Move body styles here to prevent global leakage */
+.calculatorWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +10,7 @@ body {
 .calculator {
   position: relative;
   display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Ensures the grid layout is clear */
 }
 
 .calculator .value {
@@ -26,6 +21,7 @@ body {
   outline: none;
   padding: 10px;
   font-size: 18px;
+  background: #fff;
 }
 
 .calculator span {
@@ -36,6 +32,7 @@ body {
   place-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #fff;
+  cursor: pointer;
 }
 
 .calculator span:active {
@@ -43,19 +40,26 @@ body {
   color: #fff;
 }
 
-.calculator span.clear {
-  grid-column: span 2;
-  width: 120px;
-  background: rgb(255, 163, 26);
-  /* color: #fff; */
+/* Scoped classes for buttons */
+.clear {
+  grid-column: span 2 !important;
+  width: 120px !important;
+  background: rgb(255, 163, 26) !important;
 }
 
-.calculator span.plus {
+.plus {
   grid-row: span 2;
-  height: 120px;
+  height: 120px !important;
 }
 
-.calculator span.equal {
-  background: rgb(255, 163, 26);
-  /* background: #03b1ff; */
+.equal {
+  background: rgb(255, 163, 26) !important;
+}
+
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #888;
+  text-decoration: none;
 }

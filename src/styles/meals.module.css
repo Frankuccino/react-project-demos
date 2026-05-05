@@ -1,14 +1,12 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+/* Remove the * selector (it should be in index.css) */
 
 .items-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 10px;
+  background: #fff; /* Ensure a clean background for the grid */
+  min-height: 100vh;
 }
 
 .card {
@@ -34,12 +32,22 @@
   margin-top: 20px;
 }
 
-p {
+/* 🟢 FIX: Scope these to avoid affecting other pages */
+.items-container p {
   font-weight: bold;
 }
 
-img {
+.items-container img {
   border-radius: 5px;
   height: 200px;
   width: 300px;
+}
+
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #888;
+  text-decoration: none;
+  z-index: 10;
 }

@@ -1,10 +1,5 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
+/* 1. This is your unique "fence" */
+.todoPage {
   background: #f5f9eb;
   height: 100vh;
   display: flex;
@@ -12,12 +7,8 @@ body {
   align-items: center;
 }
 
-.container {
-  background: #fcfff3;
-  padding: 50px;
-}
-
-input {
+/* 2. ONLY style inputs inside .todoPage */
+.todoPage input {
   padding: 15px;
   border: none;
   outline: none;
@@ -26,22 +17,27 @@ input {
   margin-right: 10px;
 }
 
-button {
+/* 3. ONLY style buttons inside .todoPage */
+.todoPage button {
   border-radius: 100px;
   background: #454545;
-  padding: 5px;
-  outline: none;
-  border: none;
   color: #fff;
   padding: 10px 20px;
   cursor: pointer;
+  border: none;
 }
 
-.todo-list {
+/* 4. Keep your existing classes exactly as they are */
+.container {
+  background: #fcfff3;
+  padding: 50px;
+}
+
+.todosList {
   margin-top: 3rem;
 }
 
-.todo {
+.todoItem {
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -49,10 +45,17 @@ button {
   background: #f5f9eb;
   padding: 7px 20px;
   margin: 10px;
-  font-family: sans-serif;
 }
 
-.close {
+.closeBtn {
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #888;
+  text-decoration: none;
 }
