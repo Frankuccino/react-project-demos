@@ -1,14 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
+/* Scope the background and layout */
+.testimonialsPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
   background-color: #e8faff;
 }
 
@@ -20,28 +16,30 @@ body {
   padding: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #f0fdfe;
+  max-width: 400px; /* Moved from inline style to CSS */
 }
 
-.testimonials-quote {
+.testimonialsQuote {
   font-size: 22px;
   font-style: italic;
   margin-bottom: 10px;
   color: #666;
 }
 
-.testimonials-author {
+.testimonialsAuthor {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
 }
 
-.testimonials-nav {
+.testimonialsNav {
   display: flex;
   justify-content: space-between;
 }
 
-.testimonials-nav button {
+/* 🟢 FIX: Only style buttons inside the Nav container */
+.testimonialsNav button {
   padding: 10px 20px;
   border: none;
   background-color: #82e5ee;
@@ -52,10 +50,19 @@ body {
   transition: background-color 0.3s;
 }
 
-.testimonials-nav button:hover {
+.testimonialsNav button:hover {
   background-color: #037680;
 }
 
-.testimonials-nav button:active {
+.testimonialsNav button:active {
   transform: scale(0.95);
+}
+
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #037680;
+  text-decoration: none;
+  font-family: sans-serif;
 }
