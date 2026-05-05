@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 // import { useId } from "react";
 import "./index.css";
+import styles from "../src/styles/home.module.css";
 
 // Components
 import Counter from "./components/Counter";
@@ -54,39 +55,49 @@ function Home() {
     { title: "Testimonials", path: "/testimonials" },
     { title: "Accordion", path: "/accordion" },
     { title: "Validation Form", path: "/form" },
+    {
+      title: "Products Filter",
+      path: "https://react-products-filtering.vercel.app/",
+      isExternal: true,
+    },
   ];
 
   return (
-    <main style={{ padding: "4rem", textAlign: "center" }}>
-      <h1>My React Project Showcase</h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "1.5rem",
-          marginTop: "2rem",
-        }}
-      >
-        {projects.map((p) => (
-          <Link key={p.path} to={p.path} style={cardStyle}>
-            {p.title}
-          </Link>
-        ))}
+    <main className={styles.homeWrapper}>
+      <h1 className={styles.title}>Beginner Project Showcase</h1>
+
+      <div className={styles.grid}>
+        {projects.map((p) => {
+          // Determine classes: always 'card', add 'finalProject' if it's external
+          const cardClasses = p.isExternal
+            ? `${styles.card} ${styles.finalProject}`
+            : styles.card;
+
+          if (p.isExternal) {
+            return (
+              <a
+                key={p.path}
+                href={p.path}
+                className={cardClasses}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className={styles.badge}>Final Project</div>
+                {p.title}
+                <span className={styles.externalIcon}>↗</span>
+              </a>
+            );
+          }
+
+          return (
+            <Link key={p.path} to={p.path} className={cardClasses}>
+              {p.title}
+            </Link>
+          );
+        })}
       </div>
     </main>
   );
 }
-
-const cardStyle = {
-  padding: "1.3rem",
-  border: "1px solid #ddd",
-  borderRadius: "12px",
-  textDecoration: "none",
-  color: "#333",
-  background: "#f9f9f9",
-  fontWeight: "bold",
-  transition: "transform 0.2s",
-};
 
 export default App;
