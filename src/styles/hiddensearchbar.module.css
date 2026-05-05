@@ -1,11 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-section {
+/* Scope the main section */
+.searchWrapper {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,16 +9,8 @@ section {
   transition: 0.7s ease;
 }
 
-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background: transparent;
-  cursor: pointer;
-}
-
-input {
+/* Scope the input so it doesn't style all inputs in your app */
+.searchWrapper input {
   padding: 13px 12px;
   background: transparent;
   outline: none;
@@ -30,4 +18,26 @@ input {
   color: #fff;
   border-radius: 2px;
   box-shadow: 2px 2px 2px 1px rgb(35, 35, 35);
+}
+
+/* Style for the Search Icon */
+.searchIcon {
+  color: #1a1a1a;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Style for the Icon when background is dark */
+.searchIconLight {
+  color: #1a1a1a;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: inherit;
+  text-decoration: none;
 }

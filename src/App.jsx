@@ -8,7 +8,7 @@ import Todo from "./components/Todo";
 import Meals from "./components/Meals";
 import Calculator from "./components/Calculator";
 import ToggleBackgroundColor from "./components/ToggleBackgroundColor";
-// import HiddenSearchBar from "./components/HiddenSearchBar";
+import HiddenSearchBar from "./components/HiddenSearchBar";
 // import Testimonials from "./components/Testimonials";
 // import Accordion from "./components/Accordion";
 // import Form from "./components/Form";
@@ -32,7 +32,7 @@ const App = () => {
         <Route path="/meals" element={<Meals />} />
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/toggle-color" element={<ToggleBackgroundColor />} />
-        {/* <Route path="/search-bar" element={<HiddenSearchBar />} /> */}
+        <Route path="/search-bar" element={<HiddenSearchBar />} />
         {/* <Route path="/testimonials" element={<Testimonials />} /> */}
 
         {/* <Route
@@ -60,7 +60,7 @@ function Home() {
     { title: "Meals API", path: "/meals" },
     { title: "Calculator", path: "/calculator" },
     { title: "Toggle Color", path: "/toggle-color" },
-    // { title: "Hidden Search", path: "/search-bar" },
+    { title: "Hidden Search", path: "/search-bar" },
     // { title: "Testimonials", path: "/testimonials" },
     // { title: "Accordion", path: "/accordion" },
     // { title: "Validation Form", path: "/form" },
