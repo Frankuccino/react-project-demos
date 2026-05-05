@@ -1,25 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
+.accordionPage {
   background: rgb(36, 36, 36);
   color: #fff;
   font-family: sans-serif;
-  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.container {
-  border: 2px solid white;
-}
-
-.accordion-card {
+.accordionCard {
   margin: 20px;
   padding: 20px;
   background: rgb(73, 73, 73);
@@ -29,21 +20,24 @@ body {
   display: flex;
   justify-content: space-between;
   width: 40rem;
-}
-
-.card-title {
-  display: flex;
-  justify-content: space-between;
-  width: 50rem;
+  cursor: pointer;
 }
 
 .icon {
   font-size: 1.5rem;
-  cursor: pointer;
 }
 
-p.card-info {
+/* 🟢 FIX: Scoped p tag to avoid affecting other projects */
+.accordionCard p.cardInfo {
   width: 30rem;
   padding: 20px 0;
   line-height: 1.3;
+}
+
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  text-decoration: none;
 }

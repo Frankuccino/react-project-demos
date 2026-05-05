@@ -10,12 +10,12 @@ import Calculator from "./components/Calculator";
 import ToggleBackgroundColor from "./components/ToggleBackgroundColor";
 import HiddenSearchBar from "./components/HiddenSearchBar";
 import Testimonials from "./components/Testimonials";
-// import Accordion from "./components/Accordion";
+import { AccordionPage } from "./components/Accordion";
 // import Form from "./components/Form";
 // import BackButton from "./components/BackButton"; // Highly recommended!
 
 // Data
-// import { accordionData } from "./ultils/content";
+import { accordionData } from "./ultils/content";
 
 const App = () => {
   // const id = useId();
@@ -25,7 +25,6 @@ const App = () => {
       <Routes>
         {/* Main Menu */}
         <Route path="/" element={<Home />} />
-
         {/* Project Routes - Notice how clean these are now! */}
         <Route path="/counter" element={<Counter />} />
         <Route path="/todo" element={<Todo />} />
@@ -34,18 +33,10 @@ const App = () => {
         <Route path="/toggle-color" element={<ToggleBackgroundColor />} />
         <Route path="/search-bar" element={<HiddenSearchBar />} />
         <Route path="/testimonials" element={<Testimonials />} />
-
-        {/* <Route
+        <Route
           path="/accordion"
-          element={
-            <div className="accordion-page-wrapper">
-              {accordionData.map(({ title, content }) => (
-                <Accordion title={title} content={content} key={id + title} />
-              ))}
-            </div>
-          }
-        /> */}
-
+          element={<AccordionPage data={accordionData} />}
+        />
         {/* <Route path="/form" element={<Form />} /> */}
       </Routes>
     </Router>
@@ -62,7 +53,7 @@ function Home() {
     { title: "Toggle Color", path: "/toggle-color" },
     { title: "Hidden Search", path: "/search-bar" },
     { title: "Testimonials", path: "/testimonials" },
-    // { title: "Accordion", path: "/accordion" },
+    { title: "Accordion", path: "/accordion" },
     // { title: "Validation Form", path: "/form" },
   ];
 
